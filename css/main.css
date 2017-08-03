@@ -1,12 +1,45 @@
-
 body {
   margin: 0;
 }
-.top {
-  width: 100%;
+#top {
+  width: 100vh;
   height: 60vh;
+
+  background-image: url(../img/bg.png);
+  background-repeat: no-repeat;
+  background-position: center center; 
+  background-size:cover;
 }
-.bottom {
+
+#flower{
+  width: 40vw;
+  height: 40vh;
+
+  position: absolute;  
+  top: 20vh; 
+  left: 30vw; 
+
+  background-image: url(../img/chara.png);
+  background-repeat: no-repeat;
+  background-position: center center; 
+  background-size: contain;
+}
+
+#weather{
+  width: 40vw;
+  height: 20vh;
+
+  position: absolute;  
+  top: 2vh;  
+  left: 60vw; 
+
+  background-image: url(../img/sunny.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+#graph {
   width: 100%;
   height: 40vh;
   background-color: lightgray;
