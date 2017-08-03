@@ -4,15 +4,33 @@ var audio;
 var jsonObj;
 var weather = "";
 
+var commons = ["voice_common0", "voice_common1", "voice_common2" ,"voice_common3" ,"voice_common4"];
+var drys = ["voice_dry0", "voice_dry1", "voice_dry2"];
+var sunnys = ["voice_sunny0", "voice_sunny1"];
+var rains = ["voice_rain0"];
+
 window.onload = function () {
 
   query = "https://mandragora-rails.herokuapp.com/api/weather/?callback=?";
+
   $.get(query,function(data){
     jsonObj = data;
+    console.log(data);
     console.log("load Complete");
 
     //flower
     $('#flower').css('visibility', 'visible');
+
+    date = new Date();
+    hour = date.getHours();
+    console.log(hour);
+
+    //夜は暗く
+    if (6<hour && 19<hour ) {
+      $('#top').css('background-color', 'lightskyblue');
+    }else{
+      $('#top').css('background-color', 'black');
+    }
 
     //weather
     var imgUrl = 'url("img/sunny.png")';
@@ -32,11 +50,16 @@ window.onload = function () {
 
   audio = new Audio();
   audio.preload = "none";
-  audio.src = "audio/uni1465.wav";
   audio.load();
 };
 
 function weiwei(){
+
+  rnd = Math.floor((Math.random() * commons.length));
+    console.log(rnd);
+
+  path = "audio/" + commons[rnd] + ".wav";
+  audio.src = path;
 
   audio.play();
   //alert(jsonObj["weather"]);
