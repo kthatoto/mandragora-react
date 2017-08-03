@@ -2,3 +2,12 @@
 body {
   margin: 0;
 }
+.top {
+  width: 100%;
+  height: 65vh;
+}
+.bottom {
+  width: 100%;
+  height: 35vh;
+  background-color: lightgray;
+}
