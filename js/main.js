@@ -1,28 +1,46 @@
-// AudioElement を作成
+// AudioElement
 var audio;
 
+var jsonObj;
+var weather = "";
+
 window.onload = function () {
-  // ここに読み込み完了時に実行してほしい内容を書く。
+
+  query = "https://mandragora-rails.herokuapp.com/api/weather/?callback=?";
+  $.get(query,function(data){
+    jsonObj = data;
+    console.log("load Complete");
+
+    //flower
+    $('#flower').css('visibility', 'visible');
+
+    //weather
+    var imgUrl = 'url("img/sunny.png")';
+    weather = jsonObj["weather"].toString();
+    console.log(weather);
+
+    if (weather == "Rain") {
+      imgUrl = 'url("img/rain.png")';
+    }else if(weather == "Mist"){
+
+    }
+
+    $('#weather').css('background-image', imgUrl);
+    $('#weather').css('visibility', 'visible');
+
+  });
+
   audio = new Audio();
-  // プリロードを設定する
   audio.preload = "none";
-  // サウンドファイルまでの URL アドレスを指定
-  audio.src = "audio/uni1464.wav";
-  // 読み込みを開始する
+  audio.src = "audio/uni1465.wav";
   audio.load();
-
-
-
-
 };
 
 function weiwei(){
 
+  audio.play();
+  //alert(jsonObj["weather"]);
 
-  query = "https://mandragora-rails.herokuapp.com/api/weather/?callback=?";
-  $.get(query,function(data){
-    console.log(data);
-  });
 }
 
 

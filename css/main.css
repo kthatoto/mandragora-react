@@ -22,6 +22,7 @@ body {
   background:none;
   border:0;
 
+  visibility:hidden;
   background-image: url(../img/chara.png);
   background-repeat: no-repeat;
   background-position: center center; 
@@ -37,6 +38,7 @@ body {
   top: 2vh;  
   left: 60vw; 
 
+  visibility:hidden;
   background-image: url(../img/sunny.png);
   background-repeat: no-repeat;
   background-size: contain;
