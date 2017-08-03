@@ -19,10 +19,14 @@ body {
   top: 20vh; 
   left: 30vw; 
 
+  background:none;
+  border:0;
+
   background-image: url(../img/chara.png);
   background-repeat: no-repeat;
   background-position: center center; 
   background-size: contain;
+  background-color:transparent;
 }
 
 #weather{
