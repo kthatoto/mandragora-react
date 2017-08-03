@@ -10,10 +10,19 @@ window.onload = function () {
   audio.src = "audio/uni1464.wav";
   // 読み込みを開始する
   audio.load();
+
+
+
+
 };
 
 function weiwei(){
-  audio.play();
+
+
+  query = "https://mandragora-rails.herokuapp.com/api/weather/?callback=?";
+  $.get(query,function(data){
+    console.log(data);
+  });
 }
 
 
