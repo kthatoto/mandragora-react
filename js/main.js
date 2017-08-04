@@ -26,7 +26,7 @@ window.onload = function () {
     console.log(hour);
 
     //夜は暗く
-    if (6<hour && 19<hour ) {
+    if (4<hour && hour<19 ) {
       $('#top').css('background-color', 'lightskyblue');
     }else{
       $('#top').css('background-color', 'black');

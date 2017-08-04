@@ -1,5 +1,5 @@
 
-$(function(){
+$(function () {
   // canvasの大きさを指定
   var h = $("#graph").height();
   var w = $("#graph").width();
